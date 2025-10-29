@@ -1,467 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="RAM Digital Web Design - Jasa pembuatan website profesional untuk company profile, toko online, landing page, dan portofolio." />
-    <title>RAM Digital Web Design - Semi Dark Elegant</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
-
-    <!-- Bootstrap & Font Awesome -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-    <style>
-        :root {
-            --primary: #6a5acd;
-            --secondary: #0d6efd;
-            --bg-dark: #0f1014;
-            --bg-semi: #181a20;
-            --text-light: #e8e8f0;
-            --text-muted: #b5b5c3;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-light);
-            scroll-behavior: smooth;
-        }
-
-        /* Navbar */
-        nav.navbar {
-            background: rgba(24, 26, 32, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        nav .navbar-brand,
-        nav .nav-link {
-            color: var(--text-light) !important;
-        }
-
-        nav .nav-link:hover {
-            color: var(--primary) !important;
-        }
-
-        /* Hero */
-        #home {
-            min-height: 100vh;
-            background: radial-gradient(circle at top left, #2b2b45, #0d0d18);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-            padding: 100px 15px;
-        }
-
-        #home h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, var(--primary), #7b68ee, #0d6efd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #home p {
-            max-width: 650px;
-            margin: 15px auto;
-            font-weight: 300;
-            color: var(--text-muted);
-        }
-
-        #home .btn {
-            border-radius: 50px;
-            padding: 10px 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        #home .btn-primary {
-            background: var(--primary);
-            border: none;
-        }
-
-        #home .btn-primary:hover {
-            background: #7b68ee;
-            transform: translateY(-2px);
-        }
-
-        #home .btn-outline-light {
-            border: 1px solid #ddd;
-            color: #fff;
-        }
-
-        #home .btn-outline-light:hover {
-            background: #fff;
-            color: #111;
-        }
-
-        /* Section Header */
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-weight: 700;
-            color: var(--text-light);
-        }
-
-        .section-divider {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--primary));
-            margin: 15px auto;
-            border-radius: 3px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-        }
-
-        /* Services */
-        .service-card {
-            background: var(--bg-semi);
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .service-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .service-card h5 {
-            color: #fff;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Portfolio */
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            cursor: pointer;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            transition: all 0.4s ease;
-            border-radius: 15px;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-            filter: brightness(70%);
-        }
-
-        /* Testimonials */
-        .testimonial {
-            background: var(--bg-semi);
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            padding: 25px;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .testimonial img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .testimonial p {
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* Contact */
-        .contact-info i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 1.4rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            background: #1e1f25;
-            border: 1px solid #2b2c34;
-            color: #fff;
-            border-radius: 10px;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 0.2rem rgba(106, 90, 205, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: #0c0d11;
-            color: #aaa;
-            padding: 50px 0;
-        }
-
-        footer h4 {
-            color: #fff;
-        }
-
-        footer a {
-            color: #b5b5c3;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            #home h1 {
-                font-size: 2.2rem;
-            }
-        }
-
-        /* Overlay judul portofolio */
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 15px;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
-            text-align: left;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            border-radius: 0 0 15px 15px;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .portfolio-overlay h5 {
-            color: #fff;
-            font-size: 1.05rem;
-            margin: 0;
-            font-weight: 500;
-        }
-    </style>
+        content="Code Tech — Jasa pembuatan website profesional. Laravel, PHP, MySQL, GitHub. Desain gelap, minimalis, responsif.">
+    <title>Code Tech — Jasa Pembuatan Website Profesional</title>
+    <meta property="og:title" content="Code Tech — Jasa Pembuatan Website" />
+    <meta property="og:description"
+        content="Ahli pembuatan website bisnis, portofolio, dan toko online. Solusi modern dengan Laravel, PHP, dan MySQL." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/script.js"></script>
 </head>
 
 <body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a class="brand" href="#">Code Tech</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#team">Tim</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <a class="btn-primary" href="#contact">Hubungi Kami</a>
+        </nav>
+    </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-code"></i> RAM Digital</a>
-            <button class="navbar-toggler text-white" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portofolio">Portofolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <section id="home">
-        <h1 data-aos="fade-up">RAM Digital Web Design</h1>
-        <p data-aos="fade-up" data-aos-delay="100">
-            Kualitas Terbaik untuk Anda yang Istimewa — Wujudkan website impian Anda dengan desain profesional dan
-            performa optimal.
-        </p>
-        <div data-aos="fade-up" data-aos-delay="200">
-            <a href="https://wa.me/6281234567890" class="btn btn-primary me-2"><i class="fab fa-whatsapp"></i> Hubungi
-                Kami</a>
-            <a href="#portofolio" class="btn btn-outline-light"><i class="fas fa-briefcase"></i> Lihat Portofolio</a>
-        </div>
-    </section>
-
-    <!-- Layanan -->
-    <section id="layanan" class="py-5">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">Layanan Kami</h2>
-                <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
-                <p data-aos="fade-up" data-aos-delay="200">Solusi website profesional untuk semua kebutuhan bisnis Anda
-                </p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <i class="fas fa-building"></i>
-                        <h5>Company Profile</h5>
-                        <p>Website profesional untuk meningkatkan kredibilitas bisnis Anda.</p>
+    <main>
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Code Tech</h1>
+                    <p class="tagline">Membangun website bisnis & toko online yang elegan, cepat, dan aman.</p>
+                    <div class="hero-cta">
+                        <a class="btn-primary" href="#contact">Dapatkan Konsultasi</a>
+                        <a class="btn-ghost" href="#projects">Lihat Proyek</a>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h5>Toko Online</h5>
-                        <p>E-commerce lengkap dengan sistem pembayaran dan dashboard admin.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <i class="fas fa-rocket"></i>
-                        <h5>Landing Page</h5>
-                        <p>Desain promosi menarik untuk meningkatkan konversi bisnis Anda.</p>
+                <div class="hero-image" aria-hidden="true">
+                    <div class="device-mockup">
+                        <!-- decorative placeholder, replace with SVG or image if desired -->
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portofolio -->
-    <!-- Portofolio -->
-    <section id="portofolio" class="py-5">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">Portofolio Kami</h2>
-                <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+        <!-- About -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">Tentang Kami</h2>
+                <p class="lead">Code Tech adalah usaha jasa pembuatan website yang fokus pada solusi profesional untuk
+                    bisnis kecil hingga menengah. Kami mengutamakan kualitas kode, pengalaman pengguna, dan keamanan
+                    data. Filosofi kami: sederhana, jelas, dan efektif.</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="portfolio-item">
-                        <img src="img/antrean.png" alt="Antrean" />
-                        <div class="portfolio-overlay">
-                            <h5>Website Antrian Capil</h5>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2 class="section-title">Keahlian</h2>
+                <div class="skills-grid">
+                    <article class="skill-card" data-reveal>
+                        <h3>Laravel</h3>
+                        <p>Membangun aplikasi web terstruktur, API, dan sistem admin.</p>
+                    </article>
+                    <article class="skill-card" data-reveal>
+                        <h3>MySQL</h3>
+                        <p>Desain database, optimasi query, dan integritas data.</p>
+                    </article>
+                    <article class="skill-card" data-reveal>
+                        <h3>PHP</h3>
+                        <p>Backend logic, integrasi 3rd-party, dan scripting.</p>
+                    </article>
+                    <article class="skill-card" data-reveal>
+                        <h3>HTML & CSS</h3>
+                        <p>Markup semantik, aksesibilitas, dan responsive layout.</p>
+                    </article>
+                    <article class="skill-card" data-reveal>
+                        <h3>GitHub</h3>
+                        <p>Version control, CI dasar, dan pengelolaan rilis.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title">Proyek</h2>
+                <p class="lead">Contoh proyek kami — klik untuk melihat detail.</p>
+                <div class="projects-grid">
+
+                    <div class="project-card" >
+                        <img src="assets/images/photo4.jpg" alt="Project 1">
+                        <div class="project-info">
+                            <h3>Toko Online - Fashion</h3>
+                            <p>Laravel, MySQL, Integrasi Pembayaran</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card" >
+                        <img src="assets/images/photo2.png" alt="Project 2">
+                        <div class="project-info">
+                            <h3>Website Portofolio</h3>
+                            <p>Static site, optimasi SEO, hosting GitHub Pages</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card" >
+                        <img src="assets/images/photo2.png" alt="Project 2">
+                        <div class="project-info">
+                            <h3>Website Portofolio</h3>
+                            <p>Static site, optimasi SEO, hosting GitHub Pages</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="portfolio-item">
-                        <img src="img/peternakan.png" alt="Peternakan" />
-                        <div class="portfolio-overlay">
-                            <h5>Sistem Peternakan Online</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="portfolio-item">
-                        <img src="img/penjualan-bumn.png" alt="Penjualan BUMN" />
-                        <div class="portfolio-overlay">
-                            <h5>Aplikasi Penjualan BUMN</h5>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimoni -->
-    <section id="testimoni" class="py-5">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">Testimoni Klien</h2>
-                <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-right">
-                    <div class="testimonial">
-                        <img src="https://i.pravatar.cc/100?img=1" alt="">
-                        <p>"Pelayanan cepat dan hasil memuaskan. Website kami terlihat profesional!"</p>
-                        <strong>- Budi Santoso</strong>
+        <!-- Team / Experience -->
+        <section id="team" class="section team">
+            <div class="container">
+                <h2 class="section-title">Pengalaman & Tim Kami</h2>
+                <div class="team-grid">
+                    <div class="team-card" data-reveal>
+                        <img src="assets/images/ana1.png" alt="Nama Anggota Tim">
+                        <h4>Andi — Lead Developer</h4>
+                        <p>8+ tahun pengalaman pengembangan web fullstack.</p>
                     </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="testimonial">
-                        <img src="https://i.pravatar.cc/100?img=2" alt="">
-                        <p>"Harga terjangkau tapi kualitas tinggi. Sangat direkomendasikan!"</p>
-                        <strong>- Siti Nurhaliza</strong>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-left">
-                    <div class="testimonial">
-                        <img src="https://i.pravatar.cc/100?img=3" alt="">
-                        <p>"Desain clean dan cepat diakses, cocok untuk bisnis modern."</p>
-                        <strong>- Ahmad Rizki</strong>
+                    <div class="team-card" data-reveal>
+                        <img src="assets/images/ana2.jpeg" alt="Nama Anggota Tim">
+                        <h4>Siti — UI/UX Designer</h4>
+                        <p>Spesialis desain antarmuka dan pengalaman pengguna.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Kontak -->
-    <section id="kontak" class="py-5">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">Hubungi Kami</h2>
-                <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-5" data-aos="fade-right">
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
-                        <p><i class="fas fa-envelope"></i> info@ramdigitalwebdesign.com</p>
-                        <p><i class="fas fa-clock"></i> Senin - Sabtu: 09.00 - 18.00 WIB</p>
-                    </div>
-                </div>
-                <div class="col-md-7" data-aos="fade-left">
-                    <form class="contact-form">
-                        <input type="text" class="form-control mb-3" placeholder="Nama Lengkap" required />
-                        <input type="email" class="form-control mb-3" placeholder="Email" required />
-                        <textarea class="form-control mb-3" rows="4" placeholder="Pesan Anda..." required></textarea>
-                        <button class="btn btn-primary"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
-                    </form>
+        <!-- Testimonials -->
+        <section id="testimonials" class="section testimonials">
+            <div class="container">
+                <h2 class="section-title">Testimoni</h2>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial" data-reveal>
+                        <p>"Code Tech membantu kami meluncurkan toko online hanya dalam 2 minggu. Hasilnya sangat
+                            memuaskan."</p>
+                        <footer>— Budi, Pemilik Toko</footer>
+                    </blockquote>
+                    <blockquote class="testimonial" data-reveal>
+                        <p>"Profesional, tepat waktu, dan komunikasinya jelas. Sangat direkomendasikan."</p>
+                        <footer>— Rina, Startup Founder</footer>
+                    </blockquote>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <h4>RAM Digital Web Design</h4>
-            <p>Kualitas terbaik untuk Anda yang istimewa. Kami siap mewujudkan website impian Anda.</p>
-            <p>&copy; 2025 RAM Digital Web Design. All rights reserved.</p>
+        <!-- Contact -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">Kontak</h2>
+                <p class="lead">Siap membangun proyek Anda? Isi formulir atau hubungi kami melalui link di bawah.</p>
+
+                <form id="contactForm" class="contact-form" action="#" onsubmit="return handleContact(event)">
+                    <div class="form-row">
+                        <label for="name">Nama</label>
+                        <input id="name" name="name" type="text" required placeholder="Nama Anda">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required placeholder="nama@contoh.com">
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Jelaskan kebutuhan Anda"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary" type="submit">Kirim Pesan</button>
+                        <a class="btn-ghost" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Chat
+                            WhatsApp</a>
+                    </div>
+                </form>
+
+                <div class="socials">
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Code Tech — Semua hak dilindungi.</p>
+            <a class="footer-contact" href="#contact">Hubungi Kami</a>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-    </script>
 </body>
 
 </html>
