@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="cyberBlueSmall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c6ff"/>
+      <stop offset="100%" stop-color="#0072ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#0a0a0a"/>
+  <text x="50%" y="58%" text-anchor="middle" font-family="Poppins, sans-serif"
+        font-size="48" font-weight="700" fill="url(#cyberBlueSmall)">CT</text>
+</svg>
