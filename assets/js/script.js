@@ -82,12 +82,3 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// 🔹 Form Kontak (dummy alert)
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Terima kasih! Pesan Anda telah dikirim (simulasi).');
-    form.reset();
-  });
-}
