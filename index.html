@@ -1,213 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Code Tech — Jasa pembuatan website profesional. Laravel, PHP, MySQL, GitHub. Desain gelap, minimalis, responsif.">
-    <title>Code Tech — Jasa Pembuatan Website Profesional</title>
-    <meta property="og:title" content="Code Tech — Jasa Pembuatan Website" />
-    <meta property="og:description"
-        content="Ahli pembuatan website bisnis, portofolio, dan toko online. Solusi modern dengan Laravel, PHP, dan MySQL." />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="assets/js/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Tech | Jasa Pembuatan Website Profesional</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header class="site-header">
-        <nav class="nav container">
-            <a class="brand" href="#">Code Tech</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Tentang Kami</a></li>
-                <li><a href="#skills">Keahlian</a></li>
-                <li><a href="#projects">Proyek</a></li>
-                <li><a href="#team">Tim</a></li>
-                <li><a href="#testimonials">Testimoni</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-            <a class="btn-primary" href="#contact">Hubungi Kami</a>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Hero -->
-        <section id="home" class="hero">
-            <div class="container hero-inner">
-                <div class="hero-text">
-                    <h1>Code Tech</h1>
-                    <p class="tagline">Membangun website bisnis & toko online yang elegan, cepat, dan aman.</p>
-                    <div class="hero-cta">
-                        <a class="btn-primary" href="#contact">Dapatkan Konsultasi</a>
-                        <a class="btn-ghost" href="#projects">Lihat Proyek</a>
-                    </div>
-                </div>
-                <div class="hero-image" aria-hidden="true">
-                    <div class="device-mockup">
-                        <!-- decorative placeholder, replace with SVG or image if desired -->
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- 🔹 Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Code<span>Tech</span></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#skills">Keahlian</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Paket</a></li>
+          <li><a href="#team">Tim</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="#contact" class="btn-primary">Hubungi Kami</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- About -->
-        <section id="about" class="section about">
-            <div class="container">
-                <h2 class="section-title">Tentang Kami</h2>
-                <p class="lead">Code Tech adalah usaha jasa pembuatan website yang fokus pada solusi profesional untuk
-                    bisnis kecil hingga menengah. Kami mengutamakan kualitas kode, pengalaman pengguna, dan keamanan
-                    data. Filosofi kami: sederhana, jelas, dan efektif.</p>
-            </div>
-        </section>
+  <!-- 🔹 Home -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1 data-animate>Bangun Website Impianmu <span>Bersama Code Tech</span></h1>
+      <p data-animate>Kami menyediakan layanan pembuatan website profesional — dari tugas kuliah hingga sistem custom berbasis Laravel.</p>
+      <a href="#contact" class="btn-primary">Pesan Sekarang</a>
+    </div>
+  </section>
 
-        <!-- Skills -->
-        <section id="skills" class="section skills">
-            <div class="container">
-                <h2 class="section-title">Keahlian</h2>
-                <div class="skills-grid">
-                    <article class="skill-card" data-reveal>
-                        <h3>Laravel</h3>
-                        <p>Membangun aplikasi web terstruktur, API, dan sistem admin.</p>
-                    </article>
-                    <article class="skill-card" data-reveal>
-                        <h3>MySQL</h3>
-                        <p>Desain database, optimasi query, dan integritas data.</p>
-                    </article>
-                    <article class="skill-card" data-reveal>
-                        <h3>PHP</h3>
-                        <p>Backend logic, integrasi 3rd-party, dan scripting.</p>
-                    </article>
-                    <article class="skill-card" data-reveal>
-                        <h3>HTML & CSS</h3>
-                        <p>Markup semantik, aksesibilitas, dan responsive layout.</p>
-                    </article>
-                    <article class="skill-card" data-reveal>
-                        <h3>GitHub</h3>
-                        <p>Version control, CI dasar, dan pengelolaan rilis.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+  <!-- 🔹 Tentang Kami -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 data-animate>Tentang Kami</h2>
+      <p data-animate>Code Tech adalah penyedia jasa pembuatan website profesional yang berfokus pada kualitas, kecepatan, dan kepuasan klien. Kami membantu bisnis dan individu memiliki website modern yang menarik, responsif, dan mudah dikelola.</p>
+    </div>
+  </section>
 
-        <!-- Projects -->
-        <section id="projects" class="section projects">
-            <div class="container">
-                <h2 class="section-title">Proyek</h2>
-                <p class="lead">Contoh proyek kami — klik untuk melihat detail.</p>
-                <div class="projects-grid">
+  <!-- 🔹 Keahlian -->
+  <section id="skills" class="section dark">
+    <div class="container">
+      <h2 data-animate>Keahlian Kami</h2>
+      <div class="skills">
+        <div class="skill-card" data-animate>Laravel</div>
+        <div class="skill-card" data-animate>PHP</div>
+        <div class="skill-card" data-animate>MySQL</div>
+        <div class="skill-card" data-animate>HTML / CSS</div>
+        <div class="skill-card" data-animate>GitHub</div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="project-card" >
-                        <img src="assets/images/photo4.jpg" alt="Project 1">
-                        <div class="project-info">
-                            <h3>Toko Online - Fashion</h3>
-                            <p>Laravel, MySQL, Integrasi Pembayaran</p>
-                        </div>
-                    </div>
+  <!-- 🔹 Portfolio -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <h2 data-animate>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-animate><img src="assets/images/project1.jpg" alt="Project 1"><h4>Website Company</h4></div>
+        <div class="portfolio-item" data-animate><img src="assets/images/project2.jpg" alt="Project 2"><h4>Landing Page</h4></div>
+        <div class="portfolio-item" data-animate><img src="assets/images/project3.jpg" alt="Project 3"><h4>Dashboard Admin</h4></div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="project-card" >
-                        <img src="assets/images/photo2.png" alt="Project 2">
-                        <div class="project-info">
-                            <h3>Website Portofolio</h3>
-                            <p>Static site, optimasi SEO, hosting GitHub Pages</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card" >
-                        <img src="assets/images/photo2.png" alt="Project 2">
-                        <div class="project-info">
-                            <h3>Website Portofolio</h3>
-                            <p>Static site, optimasi SEO, hosting GitHub Pages</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team / Experience -->
-        <section id="team" class="section team">
-            <div class="container">
-                <h2 class="section-title">Pengalaman & Tim Kami</h2>
-                <div class="team-grid">
-                    <div class="team-card" data-reveal>
-                        <img src="assets/images/ana1.png" alt="Nama Anggota Tim">
-                        <h4>Andi — Lead Developer</h4>
-                        <p>8+ tahun pengalaman pengembangan web fullstack.</p>
-                    </div>
-                    <div class="team-card" data-reveal>
-                        <img src="assets/images/ana2.jpeg" alt="Nama Anggota Tim">
-                        <h4>Siti — UI/UX Designer</h4>
-                        <p>Spesialis desain antarmuka dan pengalaman pengguna.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section id="testimonials" class="section testimonials">
-            <div class="container">
-                <h2 class="section-title">Testimoni</h2>
-                <div class="testimonials-grid">
-                    <blockquote class="testimonial" data-reveal>
-                        <p>"Code Tech membantu kami meluncurkan toko online hanya dalam 2 minggu. Hasilnya sangat
-                            memuaskan."</p>
-                        <footer>— Budi, Pemilik Toko</footer>
-                    </blockquote>
-                    <blockquote class="testimonial" data-reveal>
-                        <p>"Profesional, tepat waktu, dan komunikasinya jelas. Sangat direkomendasikan."</p>
-                        <footer>— Rina, Startup Founder</footer>
-                    </blockquote>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title">Kontak</h2>
-                <p class="lead">Siap membangun proyek Anda? Isi formulir atau hubungi kami melalui link di bawah.</p>
-
-                <form id="contactForm" class="contact-form" action="#" onsubmit="return handleContact(event)">
-                    <div class="form-row">
-                        <label for="name">Nama</label>
-                        <input id="name" name="name" type="text" required placeholder="Nama Anda">
-                    </div>
-                    <div class="form-row">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" required placeholder="nama@contoh.com">
-                    </div>
-                    <div class="form-row">
-                        <label for="message">Pesan</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Jelaskan kebutuhan Anda"></textarea>
-                    </div>
-                    <div class="form-actions">
-                        <button class="btn-primary" type="submit">Kirim Pesan</button>
-                        <a class="btn-ghost" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Chat
-                            WhatsApp</a>
-                    </div>
-                </form>
-
-                <div class="socials">
-                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-                    <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <p>© <span id="year"></span> Code Tech — Semua hak dilindungi.</p>
-            <a class="footer-contact" href="#contact">Hubungi Kami</a>
+  <!-- 🔹 Paket Harga -->
+  <section id="pricing" class="section dark">
+    <div class="container">
+      <h2 data-animate>Paket & Harga</h2>
+      <div class="pricing-grid">
+        <div class="price-card" data-animate>
+          <h3>Website Sederhana</h3>
+          <p class="price">Mulai 150K</p>
+          <ul>
+            <li>Desain responsif</li>
+            <li>Website tugas / pribadi</li>
+            <li>Durasi pengerjaan cepat</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Pesan Sekarang</a>
         </div>
-    </footer>
+        <div class="price-card featured" data-animate>
+          <h3>Company Profile</h3>
+          <p class="price">Mulai 500K–1Jt</p>
+          <ul>
+            <li>Desain profesional</li>
+            <li>Optimasi SEO</li>
+            <li>Gratis domain & hosting (opsional)</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Pesan Sekarang</a>
+        </div>
+        <div class="price-card" data-animate>
+          <h3>Custom System (Laravel)</h3>
+          <p class="price">Mulai 2Jt+</p>
+          <ul>
+            <li>Full fitur sesuai kebutuhan</li>
+            <li>Integrasi database MySQL</li>
+            <li>Maintenance opsional</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Pesan Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- 🔹 Tim Kami -->
+  <section id="team" class="section">
+    <div class="container">
+      <h2 data-animate>Tim Kami</h2>
+      <div class="team-grid">
+        <div class="team-member" data-animate><img src="assets/images/team1.jpg" alt=""><h4>Yodi</h4><p>Fullstack Developer</p></div>
+        <div class="team-member" data-animate><img src="assets/images/team2.jpg" alt=""><h4>Alex</h4><p>UI/UX Designer</p></div>
+        <div class="team-member" data-animate><img src="assets/images/team3.jpg" alt=""><h4>Rina</h4><p>Backend Engineer</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Testimoni -->
+  <section id="testimoni" class="section dark">
+    <div class="container">
+      <h2 data-animate>Testimoni Klien</h2>
+      <div class="testi-grid">
+        <div class="testi-card" data-animate>
+          <p>“Pelayanan cepat dan hasil memuaskan. Website saya terlihat profesional!”</p>
+          <h4>— Andi, Pemilik Toko Online</h4>
+        </div>
+        <div class="testi-card" data-animate>
+          <p>“Rekomendasi banget buat yang butuh website bisnis cepat jadi.”</p>
+          <h4>— Dini, Freelancer</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Kontak -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 data-animate>Hubungi Kami</h2>
+      <form id="contactForm" data-animate>
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Pesan" required></textarea>
+        <button type="submit" class="btn-primary">Kirim Pesan</button>
+      </form>
+      <div class="socials" data-animate>
+        <a href="#">GitHub</a> • 
+        <a href="#">Instagram</a> • 
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    <p>© 2025 Code Tech. All Rights Reserved.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
-
 </html>
