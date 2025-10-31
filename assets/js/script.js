@@ -1,64 +1,93 @@
-// Lightweight interactions: nav toggle, smooth scroll, reveal on scroll, contact form handling
+// =======================
+// CODE TECH INTERACTIONS
+// =======================
 
-document.addEventListener('DOMContentLoaded', () => {
-  // year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // nav toggle for small screens
-  const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    toggle.classList.toggle('open');
+// 🔹 Smooth Scroll Animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   });
-
-  // smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (href.length > 1) {
-        e.preventDefault();
-        document.querySelector(href).scrollIntoView({behavior: 'smooth', block: 'start'});
-        // close nav on mobile
-        if (navLinks.classList.contains('open')) navLinks.classList.remove('open');
-      }
-    });
-  });
-
-  // reveal on scroll
-  const revealElems = document.querySelectorAll('[data-reveal]');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        // optional: unobserve to improve perf
-        io.unobserve(entry.target);
-      }
-    });
-  }, {threshold: 0.12});
-  revealElems.forEach(el => io.observe(el));
 });
 
-// Contact form handler: simple mailto fallback
-function handleContact(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+// 🔹 Fade-in Animation saat Scroll
+const animatedElements = document.querySelectorAll('[data-animate]');
 
-  if(!name || !email || !message){
-    alert('Mohon lengkapi semua field.');
-    return false;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+animatedElements.forEach(el => observer.observe(el));
+
+// 🔹 Responsive Navbar (untuk mobile)
+const navbar = document.querySelector('.navbar');
+let menuOpen = false;
+
+// Tambahkan tombol hamburger otomatis (jika belum ada)
+const mobileBtn = document.createElement('div');
+mobileBtn.className = 'menu-toggle';
+mobileBtn.innerHTML = '<span></span><span></span><span></span>';
+navbar.querySelector('.container').appendChild(mobileBtn);
+
+mobileBtn.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  navbar.classList.toggle('active');
+  mobileBtn.classList.toggle('open');
+});
+
+// Tambahkan style untuk tombol hamburger
+const style = document.createElement('style');
+style.textContent = `
+.menu-toggle {
+  display: none;
+  width: 28px;
+  height: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
   }
+}
+`;
+document.head.appendChild(style);
 
-  // Build mailto (works as fallback, for production use server/email service)
-  const subject = encodeURIComponent('Permintaan dari website — ' + name);
-  const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
-  const mailto = `mailto:youremail@codetech.com?subject=${subject}&body=${body}`;
-
-  // Open mail client
-  window.location.href = mailto;
-  // Optionally show a success message
-  setTimeout(()=>{ alert('Klien diarahkan ke aplikasi email default Anda. Jika tidak terbuka, silakan hubungi kami via WhatsApp.'); }, 400);
-  return false;
+// 🔹 Form Kontak (dummy alert)
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Terima kasih! Pesan Anda telah dikirim (simulasi).');
+    form.reset();
+  });
 }
